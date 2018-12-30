@@ -65,6 +65,7 @@ include($nav_path);
             <?php } ?>
             </tbody>
         </table>
+        <?php if($tasks['last_page'] > 1){ ?>
         <nav aria-label="Page navigation example">
             <ul class="pagination mt-5 mx-auto w-50">
                 <?php if($tasks['current_page'] > 1){ ?>
@@ -80,6 +81,7 @@ include($nav_path);
                 <?php } ?>
             </ul>
         </nav>
+        <?php } ?>
     </div>
 </div>
 

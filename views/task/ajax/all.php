@@ -28,19 +28,21 @@
         <?php } ?>
         </tbody>
     </table>
-    <nav aria-label="Page navigation example">
-        <ul class="pagination mt-5 mx-auto w-50">
-            <?php if($tasks['current_page'] > 1){ ?>
-                <li data-url="<?php echo  url('/').'?page='.($tasks['current_page'] - 1); ?>" class="page-item"><a class="page-link" href="#">Previous</a></li>
-            <?php }
-            for($i = 1; $tasks['last_page'] >= $i; $i++){
-                ?>
-                <li data-url="<?php echo  url('/').'?page='.$i; ?>" class="page-item <?php echo  $tasks['current_page'] == $i ? 'active' : ''; ?>"><a class="page-link" href="#"><?php echo  $i; ?></a></li>
-            <?php }
-            if($tasks['current_page'] < $tasks['last_page']){
-                ?>
-                <li data-url="<?php echo  url('/').'?page='.($tasks['current_page'] + 1); ?>" class="page-item"><a class="page-link" href="#">Next</a></li>
-            <?php } ?>
-        </ul>
-    </nav>
+    <?php if($tasks['last_page'] > 1){ ?>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination mt-5 mx-auto w-50">
+                <?php if($tasks['current_page'] > 1){ ?>
+                    <li data-url="<?php echo  url('/').'?page='.($tasks['current_page'] - 1); ?>" class="page-item"><a class="page-link" href="#">Previous</a></li>
+                <?php }
+                for($i = 1; $tasks['last_page'] >= $i; $i++){
+                    ?>
+                    <li data-url="<?php echo  url('/').'?page='.$i; ?>" class="page-item <?php echo  $tasks['current_page'] == $i ? 'active' : ''; ?>"><a class="page-link" href="#"><?php echo  $i; ?></a></li>
+                <?php }
+                if($tasks['current_page'] < $tasks['last_page']){
+                    ?>
+                    <li data-url="<?php echo  url('/').'?page='.($tasks['current_page'] + 1); ?>" class="page-item"><a class="page-link" href="#">Next</a></li>
+                <?php } ?>
+            </ul>
+        </nav>
+    <?php } ?>
 </div>
