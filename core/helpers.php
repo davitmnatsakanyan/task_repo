@@ -22,7 +22,7 @@ function conf($path)
     $file = $a[0];
     $key = $a[1];
 
-    $content = include __DIR__ . '\..\config\\' . $file . '.php';
+    $content = include __DIR__ . '/../config/' . $file . '.php';
     return $content[$key];
 }
 
