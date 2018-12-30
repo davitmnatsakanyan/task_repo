@@ -12,7 +12,7 @@ class DB
 
     public function __construct(){
         try {
-            $this->pdo = new PDO('mysql:host='.conf('database.host').';dbname='.conf('database.name'), conf('database.username'), conf('database.password'));
+            $this->pdo = new PDO('mysql:host='.conf('database.host').';port=3306;dbname='.conf('database.name'), conf('database.username'), conf('database.password'));
         } catch (PDOException $e) {
             print "Error!: " . $e->getMessage() . "<br/>";
             die();

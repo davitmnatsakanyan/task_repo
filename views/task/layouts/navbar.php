@@ -2,5 +2,5 @@
 
     <h5 class="my-0 mr-md-auto font-weight-normal"><a href="<?php echo url('/'); ?>">Home</a></h5>
 
-    <a class="btn btn-outline-primary" href="#">Log In</a>
+    <a class="btn btn-outline-primary" href="<?php echo url('admin/login'); ?>">Log In</a>
 </div>

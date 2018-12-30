@@ -1,6 +1,9 @@
 <?php
 
 /** Task Routes */
+
+use core\Route;
+
 Route::get('/','TaskController@all');
 Route::get('task/create','TaskController@create');
 Route::post('task/save','TaskController@save');
