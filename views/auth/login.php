@@ -16,6 +16,15 @@
 <body class="text-center">
     <form class="form-signin" action="<?php echo  url('admin/login'); ?>" method="post">
         <h1 class="h3 mb-3 font-weight-normal">ADMIN</h1>
+        <?php
+        if (get_flash_errors()) {
+            echo '<div class="alert alert-danger"><ul>';
+            foreach (get_flash_errors() as $error) {
+                echo '<li> ' . $error . '</li>';
+            }
+            echo '</ul></div>';
+        }
+        ?>
         <label for="inputUsername" class="sr-only">Username</label>
         <input name="username" type="text" id="inputUsername" class="form-control mb-3" placeholder="Username" required autofocus>
         <label for="inputPassword" class="sr-only">Password</label>

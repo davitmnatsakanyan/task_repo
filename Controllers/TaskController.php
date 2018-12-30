@@ -18,8 +18,10 @@ class TaskController extends BaseController
      */
     public function all(){
         // validate data
-        if(isset($_GET['type']) && !in_array($_GET['type'], ['asc', 'desc'])){
-            echo 'Incorrect data values'; die();
+        if(isset($_GET['type'])) {
+            $this->validate($_GET, [
+                'type' => 'in:asc,desc'
+            ], '/');
         }
 
         $params = [];
@@ -55,9 +57,6 @@ class TaskController extends BaseController
             'text' => 'required',
         ],
             'task/create');
-
-//        $message = 'Language already exist!';
-//        set_flash_errors($message);
 
         $data = [];
         $data['user_name'] = $_POST['user_name'];

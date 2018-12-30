@@ -35,7 +35,9 @@ class AuthController extends BaseController
             redirect('admin/index');
         }
         else{ // Authentication failed
-            redirect('/admin/login'); // todo add error message
+            $message = 'Incorrect credentials';
+            set_flash_errors($message);
+            redirect('/admin/login');
         }
     }
 

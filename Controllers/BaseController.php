@@ -24,10 +24,14 @@ class BaseController
         foreach ($params as $key => $rules){
             $rules = explode('|', $rules);
             foreach ($rules as $rule){
+                $exp = explode(':', $rule);
+                $rule = $exp[0];
+                $values = $exp[1];
+
+                $_key = str_replace('_', ' ', $key);
                 switch ($rule){
                     case 'required':
                         if(!isset($request[$key]) || !$request[$key]){
-                            $_key = str_replace('_', ' ', $key);
                             $message = $_key.' field is required';
 
                             array_push($errors, $message);
@@ -35,12 +39,19 @@ class BaseController
                         break;
                     case 'email':
                         if (!filter_var($request[$key], FILTER_VALIDATE_EMAIL)) {
-                            $_key = str_replace('_', ' ', $key);
                             $message = $_key.' field is not a valid email address';
 
                             array_push($errors, $message);
                         }
                         break;
+                    case 'in':
+                        $array_values = explode(',', $values);
+                        if(!in_array($request[$key], $array_values)){
+                            $message = $_key.' can contain only values: '.$values;
+
+                            array_push($errors, $message);
+                        }
+                    break;
                     default:
                         echo 'Invalid validation rule provided'; die();
                      break;
