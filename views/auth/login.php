@@ -17,9 +17,9 @@
     <form class="form-signin" action="<?php echo  url('admin/login'); ?>" method="post">
         <h1 class="h3 mb-3 font-weight-normal">ADMIN</h1>
         <label for="inputUsername" class="sr-only">Username</label>
-        <input name="username" type="text" id="inputUsername" class="form-control" placeholder="Username" required autofocus>
+        <input name="username" type="text" id="inputUsername" class="form-control mb-3" placeholder="Username" required autofocus>
         <label for="inputPassword" class="sr-only">Password</label>
-        <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <input name="password" type="password" id="inputPassword" class="form-control mb-3" placeholder="Password" required>
 
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
     </form>
