@@ -17,6 +17,11 @@ class DB
             $username = conf('database.username');
             $password = conf('database.password');
 
+            echo $host.'<br>';
+            echo $dbname.'<br>';
+            echo $username.'<br>';
+            echo $password; die();
+
             $this->pdo = new PDO("mysql:host=us-cdbr-iron-east-01.cleardb.net;dbname=heroku_4cf3ef7f247f1dd", "$username", "$password");
         } catch (PDOException $e) {
             print "Error!: " . $e->getMessage() . "<br/>";
