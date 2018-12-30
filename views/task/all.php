@@ -29,7 +29,7 @@
     <div class="row">
         <div class="col-12">
             <div class="pull-left">
-                <label for="sort">Order By</label>
+                <label for="sort" >Order By</label>
                 <select name="order">
                     <option value="">Select</option>
                     <option value="user_name">User Name</option>
