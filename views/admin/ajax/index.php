@@ -38,7 +38,7 @@
         </tbody>
     </table>
     <nav aria-label="Page navigation example">
-        <ul class="pagination">
+        <ul class="pagination mt-5 mx-auto w-50">
             <?php if($tasks['current_page'] > 1){ ?>
                 <li data-url="<?php echo  url('admin/index').'?page='.($tasks['current_page'] - 1); ?>" class="page-item"><a class="page-link" href="#">Previous</a></li>
             <?php }
