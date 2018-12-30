@@ -16,6 +16,16 @@ function redirect($url){
     exit();
 }
 
+function conf($path)
+{
+    $a = explode('.', $path);
+    $file = $a[0];
+    $key = $a[1];
+
+    $content = include __DIR__ . '\..\config\\' . $file . '.php';
+    return $content[$key];
+}
+
 function view($file, $params = [])
 {
 
